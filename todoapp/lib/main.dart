@@ -30,7 +30,7 @@ class _todolistState extends State<todolist> {
     return Scaffold(
       appBar: AppBar(
         title: Text("TO DO"),
-        backgroundColor: Colors.amber,
+        backgroundColor: Colors.blue,
         toolbarHeight: 50,
       ),
       body: Column(
