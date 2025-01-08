@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: todolist(),
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(primarySwatch: Colors.yellow),
+      theme: ThemeData(primarySwatch: Colors.green),
     );
   }
 }
@@ -28,23 +28,35 @@ class _todolistState extends State<todolist> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.blue,
       appBar: AppBar(
-        title: Text("TO DO"),
-        backgroundColor: Colors.blue,
-        toolbarHeight: 50,
+        title: Center(
+          child: Text("To Do"),
+          )
       ),
       body: Column(
-        children: [
+        children:[
           Expanded(
             flex: 90,
             child: ListView.builder(
               itemCount: 5,
               itemBuilder: (context,index){
                 return Card(
+
                   child: Row(
                     children: [
-                      Text("message"),
-                      Text("done"),
+                      Expanded(
+                        flex: 70,
+                        child: Text("message...")),
+                      Expanded(
+                        flex: 5,
+                        child: SizedBox(width: 5,)),
+                      Expanded(
+                        flex: 20,
+                        child: ElevatedButton(onPressed: (){
+
+                        }, 
+                        child: Text("Delete"))) , 
                     ],
                   ),
                 );
@@ -57,7 +69,7 @@ class _todolistState extends State<todolist> {
             child: Row(
             children: [
               Expanded(
-                flex: 70,
+                flex: 80,
                 child: Container(
                   height: 40,
                   child: TextFormField(
@@ -71,10 +83,10 @@ class _todolistState extends State<todolist> {
                 )
                 ),
               Expanded(
-                flex: 3,
+                flex: 5,
                 child: SizedBox(width: 5,)),
               Expanded(
-                flex: 27,
+                flex: 15,
                 child: ElevatedButton(onPressed: (){
 
                 }, 
